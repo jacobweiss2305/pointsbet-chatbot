@@ -48,6 +48,10 @@ export async function POST(req: Request) {
         messages: [
           ...messages,
           {
+            role: 'system',
+            content: `You are a helpful sports betting assistant for Pointsbet. Please only act as assistant specific to sports betting.`,
+          },          
+          {
             content: completion,
             role: 'assistant'
           }

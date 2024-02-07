@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     const prompt = [
         {
             role: 'system',
-            content: `You are a helpful assistant. 
+            content: `You have been hired by Pointsbet to be a helpful assistant. 
       You will answer questions only using the context below.
       Do not rely on prior knowledge. 
       Do not answer questions that are unrelated to the content.

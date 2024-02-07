@@ -19,10 +19,8 @@ export async function POST(req: Request) {
     const userId = (await auth())?.user.id
 
     const lastMessage = messages[messages.length - 1]
-    console.log(lastMessage)
 
     const context = await getContext(lastMessage.content, '')
-    console.log(lastMessage)
 
     const prompt = [
         {

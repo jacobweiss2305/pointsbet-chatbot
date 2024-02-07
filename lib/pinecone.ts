@@ -30,11 +30,9 @@ const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, name
       topK,
       includeMetadata: true,
     })
-    console.log('queryResult', queryResult)
     return queryResult.matches || []
   } catch (e) {
     // Log the error and throw it
-    console.log("Error querying embeddings: ", e)
     throw new Error(`Error querying embeddings: ${e}`)
   }
 }

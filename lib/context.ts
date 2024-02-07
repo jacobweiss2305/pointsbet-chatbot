@@ -16,11 +16,8 @@ export const getContext = async (message: string, namespace: string, maxTokens =
     
     // Get the embeddings of the input message
     const embedding = await getEmbeddings(message);
-    console.log('namespace', namespace, 'embedding', embedding)
-
     // Retrieve the matches for the embeddings from the specified namespace
     const matches = await getMatchesFromEmbeddings(embedding, 10, namespace);
-    console.log(matches);
     // Filter and extract as before
     const docs = matches.map(m => m.metadata?.text ?? "Unfortunately, no relevant context was found for this message.");
 

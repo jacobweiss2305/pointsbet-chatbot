@@ -25,10 +25,11 @@ export async function POST(req: Request) {
     const prompt = [
         {
             role: 'system',
-            content: `You have been hired by Pointsbet to be a helpful assistant. 
-      You will answer questions only using the context below.
-      Do not rely on prior knowledge. 
-      Do not answer questions that are unrelated to the content.
+        content: `You have been hired by Pointsbet to be a helpful assistant.
+      Help the user with Pointsbet suppport questions and sports betting questions.
+      The context below are recent support documents that you can use to solve the users question.
+      Do not rely on prior knowledge unless its related to a sports betting question.
+      Do not answer questions that are unrelated sports betting or Pointsbet support.
     START CONTEXT BLOCK
     ${context}
     END OF CONTEXT BLOCK
@@ -47,7 +48,7 @@ export async function POST(req: Request) {
     }
 
     const res = await openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt-4-0125-preview',
         messages: [...prompt, ...messages.filter((message: Message) => message.role === 'user')],
         temperature: 0.7,
         stream: true

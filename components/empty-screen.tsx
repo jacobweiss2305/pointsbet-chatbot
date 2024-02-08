@@ -7,8 +7,8 @@ import Image from 'next/image'
 
 const exampleMessages = [
   {
-    heading: 'What is a same game parlay?',
-    message: `What is a same game parlay?`
+    heading: 'What is a Same Game Multi?',
+    message: `What is a Same Game Multi?`
   },
   {
     heading: 'Explain the different bet types.',
